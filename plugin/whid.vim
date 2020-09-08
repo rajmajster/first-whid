@@ -1,13 +1,15 @@
-" in plugin/whid.vim
-if exists('g:loaded_whid') | finish | endif " prevent loading file twice 
+" plugin/whid.vim
+if exists('g:loaded_whid') | finish | endif
 
-let s:save_cpo = &cpo " save user coption
-set cpo&vim " reset them to defaults
+let s:save_cpo = &cpo
+set cpo&vim
 
-" command to run our plugin
+hi def link WhidHeader      Number
+hi def link WhidSubHeader   Identifier
+
 command! Whid lua require'whid'.whid()
 
-let &cpo = s:save_cpo " and restore after
+let &cpo = s:save_cpo
 unlet s:save_cpo
 
-let g:loaded_whid = 1 
+let g:loaded_whid = 1
