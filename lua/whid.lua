@@ -66,7 +66,7 @@ local function update_view(direction)
   position = position + direction
   if position < 0 then position = 0 end
 
-  local result = vim.fn.systemlist('git diff-tree --no-commit-id --name-only -r  HEAD~'..position)
+  local result = systemlist('git diff-tree --no-commit-id --name-only -r  HEAD~'..position)
   if #result == 0 then table.insert(result, '') end -- add  an empty line to preserve layout if there is no results
   for k,v in pairs(result) do
     result[k] = '  '..result[k]
