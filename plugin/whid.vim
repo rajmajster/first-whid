@@ -1,7 +1,7 @@
 " in plugin/whid.vim
 if exists('g:loaded_whid') | finish | endif " prevent loading file twice 
 
-let s:save_cpo - &cpo " save user coption
+let s:save_cpo = &cpo " save user coption
 set cpo&vim " reset them to defaults
 
 " command to run our plugin
